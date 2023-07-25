@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.ToString;
+
 
 @Entity
 @Table(
@@ -18,14 +20,20 @@ public class Car {
             strategy = GenerationType.SEQUENCE
     )
     @Column(
-            name = "Cust_id",
+            name = "Custid",
             nullable = false
     )
     private Long id;
+
+    @Column(name = "car_id",
+    nullable = false)
+    private Long car_id;
     @Column(
             name = "mpg"
     )
     int mpg;
+
+
     @Column(
             name = "cylinders"
     )

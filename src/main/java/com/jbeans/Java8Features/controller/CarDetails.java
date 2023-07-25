@@ -15,16 +15,19 @@ public class CarDetails {
     @Autowired
     CarServices carServices;
 
-    public CarDetails() {
-    }
-
     @GetMapping({"/AllCars"})
     public List<Car> getAllCar() {
-        return this.carServices.getCarList();
+        return carServices.getCarList();
     }
 
     @GetMapping({"/CarData"})
     public void displayCar() {
-        this.carServices.displayCar();
+        carServices.displayCar();
     }
+
+    @GetMapping("/top3")
+    public List<Car> getTop3(){
+        return carServices.top3();
+    }
+
 }
